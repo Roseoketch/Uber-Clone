@@ -33,3 +33,8 @@ class Point(models.Model):
 
     class Meta:
         unique_together = (('latitude', 'longitude'),)
+
+class Location(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='driver_location')
+    current = models.CharField(max_length=100, blank=True)
+    destination = models.CharField(max_length=100, blank=True)
