@@ -1,0 +1,68 @@
+{% load bootstrap3 %} {% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8" content="width=device-width, initial-scale=1"> {%if title%}
+  <title>{{title}}</title>
+  {% else %}
+  <title>CarPoolers</title>
+  {% endif %}
+
+  <!-- Styles block -->
+  {% block styles %} {% bootstrap_css %}
+  <link rel="stylesheet" href="{% static 'css/registration-base.css'%}"> {% endblock %}
+
+</head>
+
+<body>
+
+  <div class="container-fluid">
+
+    <h1 class="welcome">
+
+            <a href="{% url 'index'%}">
+                Welcome To Car Poolers
+            </a>
+
+        </h1>
+
+    <hr>
+
+    <div class="container">
+
+      <div class="row">
+        <!--  Empty Div -->
+        <div class="col-md-2 col-lg-2">
+
+        </div>
+
+        <div class="col-md-8 col-lg-8">
+
+          <!-- Content block -->
+          {% block content %} {% endblock %}
+
+        </div>
+        <!--  Empty Div -->
+        <div class="col-md-2 col-lg-2">
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- Scripts block -->
+  {% block scripts %}
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  {% bootstrap_javascript %} {% endblock %}
+
+</body>
+
+</html>

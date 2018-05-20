@@ -8,6 +8,28 @@ def welcome(request):
     return render(request, 'driv.html')
 
 
+def driver_login(request):
+    title = "Uber Clone"
+
+    try:
+        if request.method == 'POST':
+            form = DriverLogin(request.POST)
+            if form.is_valid:
+                phone_number = request.POST.get('phone_number')
+                try:
+                    found_driver = Driver.objects.get(phone_number=phone_number)
+                    return redirect(driver, found_driver.id)
+                except ObjectDoesNotExist:
+                    raise Http404()
+            else:
+                messages.error(request, ('Please correct the error below.'))
+        else:
+            form = DriverLogin()
+            return render(request, 'registration/driver/login.html',{"title":title,"form":form})
+    except ObjectDoesNotExist:
+        return redirect(new_driver)
+
+
 def driver_profile(request, passenger_id, driver_profile_id):
     passengers = Passenger.objects.all()
 
