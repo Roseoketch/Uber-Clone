@@ -5,7 +5,7 @@ from django.conf.urls.static import static
 
 urlpatterns=[
     # url('^$',views.passenger,name = 'passenger'),
-    url(r'^passenger/(\d+)',views.passenger,name ='passenger')
+    url(r'^passenger/(\d+)',views.passenger,name ='passenger'),
 
 ]
 if settings.DEBUG:

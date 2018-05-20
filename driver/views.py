@@ -1,6 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from django.http  import HttpResponse
-from .models import Driver,DriverProfile
+from .models import Driver,DriverProfile, Point
 # from google.appengine.ext import db
 
 # Create your views here.

@@ -26,14 +26,10 @@ class DriverProfile(models.Model):
     car_number_plate = models.CharField(blank=True, max_length=255)
     car_color = models.CharField(max_length=255, blank=True)
 
-# class VehiclePosition(models.Model):
-#     latitude = db.FloatProperty()       # Instead can also use GeoPtProperty , but obviously lose ordering based on lat/lng
-#     longitude = db.FloatProperty()
-#     when = db.DateTimeProperty()
-#     speed = db.FloatProperty()
-#     vehicle_id= db.StringProperty()
-#     create_time = db.DateTimeProperty(auto_now_add = True)
-#
-#
-#     def __str__(self):
-#         return "%s - %s" % (self.latitude, self.longitude)
+
+class Point(models.Model):
+    latitude = models.FloatField()
+    longitude = models.FloatField()
+
+    class Meta:
+        unique_together = (('latitude', 'longitude'),)
