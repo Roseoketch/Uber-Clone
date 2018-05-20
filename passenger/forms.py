@@ -1,7 +1,8 @@
 from django import forms
 from django.contrib.auth.models import User
-from driver.models import Reviews
-from .models import Passenger, Location, Reviews
+# from driver.models import Reviews
+from .models import Passenger, Location
+
 
 class UserForm(forms.ModelForm):
     class Meta:
@@ -13,7 +14,7 @@ class PassengerProfileForm(forms.ModelForm):
         model = Passenger
         fields = ['profile_pic']
 
-class DriverReviewForm(forms.ModelForm):
+class ReviewsForm(forms.ModelForm):
     class Meta:
         model = Reviews
         fields = ('review',)

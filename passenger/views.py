@@ -19,9 +19,6 @@ def passenger(request):
 
 
 def passenger_profile(request, username):
-    '''
-    render passenger information
-    '''
     user = User.objects.get(username=username)
     profile = PassengerProfile.objects.get(user=user)
     location = Location.objects.get(user=user)

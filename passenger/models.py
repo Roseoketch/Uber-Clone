@@ -10,7 +10,6 @@ class Passenger(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='Passenger')
     phone = models.CharField(max_length=50, blank=True)
     location = models.CharField(max_length=50, blank=True)
-    profilePic = models.ImageField(upload_to='profile/',null=True,blank=True)
     bio = models.CharField(max_length=60,blank=True)
     pub_date = models.DateTimeField(auto_now_add=True)
 
