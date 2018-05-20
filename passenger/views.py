@@ -18,7 +18,7 @@ def passenger(request):
     return render(request,'pass.html')
 
 
-def profile(request, username):
+def passenger_profile(request, username):
     '''
     render passenger information
     '''
