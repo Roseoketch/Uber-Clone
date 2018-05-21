@@ -9,14 +9,14 @@ class UserForm(forms.ModelForm):
         model = User
         fields = ['username', 'first_name', 'email']
 
-class PassengerProfileForm(forms.ModelForm):
-    class Meta:
-        model = Passenger
-        fields = ['profile_pic']
+# class PassengerProfileForm(forms.ModelForm):
+#     class Meta:
+#         model = Passenger
+#         fields = ['profile']
 
 class ReviewsForm(forms.ModelForm):
     class Meta:
-        model = Reviews
+        # model = Reviews
         fields = ('review',)
 
 class LocationForm(forms.ModelForm):

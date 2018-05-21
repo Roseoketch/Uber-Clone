@@ -10,8 +10,8 @@ from django.shortcuts import render
 from django.http  import HttpResponse
 from .models import Passenger, Location, Reviews
 from driver.models import DriverProfile
-from .forms import UserForm, PassengerProfileForm, DriverReviewForm, LocationForm
-from annoying.decorators import ajax_request
+# from .forms import UserForm, PassengerProfile, DriverReviewForm, LocationForm
+# from annoying.decorators import ajax_request
 
 # Create your views here.
 def passenger(request):
